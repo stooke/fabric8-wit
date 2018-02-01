@@ -48,7 +48,7 @@ type OSIOClient struct {
 }
 
 // NewOSIOClient creates an openshift IO client given an http request context
-func NewOSIOClient(ctx context.Context, scheme string, host string) *OSIOClient {
+func NewOSIOClient(ctx context.Context, scheme string, host string) OpenshiftIOClient {
 	wc := witclient.New(goaclient.HTTPClientDoer(http.DefaultClient))
 	wc.Host = host
 	wc.Scheme = scheme

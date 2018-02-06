@@ -294,7 +294,7 @@ func main() {
 	app.MountUserServiceController(service, userServiceCtrl)
 
 	// Mount "apps" controller
-	appsCtrl := controller.NewAppsController(service, config)
+	appsCtrl := controller.NewAppsController(controller.AppsControllerConfig{}, service, config)
 	app.MountAppsController(service, appsCtrl)
 
 	// Mount "deployments" controller
